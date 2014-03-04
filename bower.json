@@ -1,0 +1,11 @@
+{
+  "name": "foundation-compass-app",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation",
+    "openlayers": "~2.13.1",
+    "heatmap.js": "~0.0.1",
+    "underscore": "~1.6.0"
+  }
+}

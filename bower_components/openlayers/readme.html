@@ -1,0 +1,105 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>The Middleman</title>
+    
+    <link href="/stylesheets/app.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/modernizr.js" type="text/javascript"></script>
+  </head>
+  
+  <body class="bower_components bower_components_openlayers bower_components_openlayers_readme">
+    <h1 id="openlayers">OpenLayers</h1>
+
+<p>Copyright (c) 2005-2013 OpenLayers Contributors. See authors.txt for
+more details.</p>
+
+<p>OpenLayers is a JavaScript library for building map applications
+on the web. OpenLayers is made available under a BSD-license.
+Please see license.txt in this distribution for more details.</p>
+
+<h2 id="getting-openlayers">Getting OpenLayers</h2>
+
+<p>OpenLayers lives at http://www.openlayers.org/.  Find details on downloading stable releases or the development version the <a href="http://trac.osgeo.org/openlayers/wiki/HowToDownload">development site</a>.</p>
+
+<h2 id="installing-openlayers">Installing OpenLayers</h2>
+
+<p>You can use OpenLayers as-is by copying build/OpenLayers.js and the
+entire theme/ and img/ directories up to your webserver and putting them 
+in the same directory. The files can be in subdirectories on your website, 
+or right in the root of the site, as in these examples. 
+To include the OpenLayers library in your web page from the root of the site, use:</p>
+
+<pre><code>&lt;script type="text/javascript" src="/OpenLayers.js" /&gt;
+</code></pre>
+
+<p>As an example, using bash (with the release files in ~/openlayers):</p>
+
+<pre><code>$ cd /var/www/html
+$ cp ~/openlayers/OpenLayers.js ./
+$ cp -R ~/openlayers/theme ./
+$ cp -R ~/openlayers/img ./
+</code></pre>
+
+<p>If you want to use the multiple-file version of OpenLayers (for, say,
+debugging or development purposes), copy the lib/ directory up to your
+webserver in the same directory you put the img/ folder. Then add
+the following to your web page instead:</p>
+
+<pre><code>&lt;script type="text/javascript" src="/lib/OpenLayers.js" /&gt;
+</code></pre>
+
+<p>As an example, using bash (with the release files in ~/openlayers):</p>
+
+<pre><code>$ cd /var/www/html
+$ cp -R ~/openlayers/lib ./
+$ cp -R ~/openlayers/theme ./
+$ cp -R ~/openlayers/img ./
+</code></pre>
+
+<h2 id="alternate-openlayers-versions-in-this-release">Alternate OpenLayers Versions in this Release</h2>
+
+<p>The following versions of OpenLayers single file builds are included in this release 
+and can be used in place of OpenLayers.js in any of the above instructions:</p>
+
+<ol>
+  <li>OpenLayers.js - full build –&gt; Includes everything except the alternate language
+ translations and deprecated classes.</li>
+  <li>OpenLayers.mobile.js - a mobile focused build –&gt; Includes a subset of the OpenLayers 
+ library to serve common mobile web app use cases. This build provides access to 
+ OpenStreetMap, Bing, WMS, WFS and vector layers; touch optimized controls; geolocation;
+ vector editing and interaction tools. The examples tagged <code>mobile</code> can use this build.</li>
+  <li>OpenLayers.light.js - a simple use case focused build –&gt; Includes a subset of the
+ OpenLayers library to serve the basic use case of displaying points and polygons
+ on a map. This build provides access to OpenStreetMap, Bing, Google, WMS, and 
+ vector layers; basic map controls; and vector interaction tools. The examples
+ tagged <code>light</code> can use this build.</li>
+</ol>
+
+<h2 id="using-openlayers-in-your-own-website">Using OpenLayers in Your Own Website</h2>
+
+<p>The <a href="http://openlayers.org/dev/examples/">examples directory</a> is full of useful examples.</p>
+
+<p>Documentation is available at http://trac.osgeo.org/openlayers/wiki/Documentation.
+You can generate the API documentation with http://www.naturaldocs.org/
+As an example, using bash (with the release files in ~/openlayers):</p>
+
+<pre><code>$ cd ~/openlayers/
+$ /path/to/NaturalDocs -i lib/ -o HTML doc/ -p doc_config/ -s Default OL
+</code></pre>
+
+<p>Information on changes in the API is available in release notes found in the notes folder.</p>
+
+<h2 id="contributing-to-openlayers">Contributing to OpenLayers</h2>
+
+<p>Please join the email lists at http://openlayers.org/mailman/listinfo
+Patches are welcome!</p>
+
+
+
+    <script src="/javascripts/all.js" type="text/javascript"></script>
+  </body>
+</html>

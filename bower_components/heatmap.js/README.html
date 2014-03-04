@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>The Middleman</title>
+    
+    <link href="/stylesheets/app.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/modernizr.js" type="text/javascript"></script>
+  </head>
+  
+  <body class="bower_components bower_components_heatmap">
+    <h1 id="heatmapjs">heatmap.js</h1>
+<p>heatmap.js is a JavaScript library that can be used to generate web heatmaps with the html5canvas element based on your data.</p>
+
+<h2 id="how-it-works">How it works</h2>
+<p>Heatmap instances contain a store in order to colorize the heatmap based on relative data, which means if you're adding only a single datapoint to the store it will be displayed as the hottest(red) spot, then adding another point with a higher count, it will dynamically recalculate. 
+The heatmaps are fully customizable - you're welcome to choose your own color gradient, change its opacity, datapoint radius and many more. </p>
+
+<h2 id="how-to-use-it">How to use it</h2>
+<p>Just add heatmap.js to your webpage and it will create one global object called <strong>heatmapFactory</strong> which you also can access as <strong>h337</strong>.
+This global object has a function <strong>create</strong> that takes one argument <strong>config</strong> (Object) and returns a heatmap instance. 
+At the configuration object you can specify the following properties in order to customize your heatmap instance:  </p>
+
+<ul>
+  <li><strong>radius</strong> (optional) Number. That's the radius of a single datapoint in the heatmap** (measured in pixels). Default is 40</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>element</strong> (required) String</td>
+          <td>HTMLelement. Either provide an element's id or the element itself which should contain the heatmap.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><strong>visible</strong> (optional) Boolean. Whether the heatmap is visible or not. Default is true</li>
+  <li><strong>gradient</strong> (optional) Object. An object which contains colorstops from 0 to 1. Default is the standard heatmap gradient.</li>
+  <li><strong>opacity</strong> (optional) Number [0-100]. Opacity of the heatmap measured in percent.</li>
+</ul>
+
+<p>Here is an example instanciation:</p>
+
+<p>```javascript
+var config = {
+    "radius": 30,
+    "element": "heatmapEl",
+    "visible": true,
+    "opacity": 40,
+    "gradient": { 0.45: "rgb(0,0,255)", 0.55: "rgb(0,255,255)", 0.65: "rgb(0,255,0)", 0.95: "yellow", 1.0: "rgb(255,0,0)" }
+};</p>
+
+<p>var heatmap = heatmapFactory.create(config);
+```</p>
+
+<p>After creating the heatmap object you can set a dataset (import), add single datapoints and export the datapoints:</p>
+
+<p>```javascript
+// set a dataset
+heatmap.store.setDataSet({ max: 10, data: [{x: 10, y: 20, count: 5}, …]});</p>
+
+<p>// add a single datapoint
+heatmap.store.addDataPoint(10, 20);</p>
+
+<p>// export the dataset
+var dataSet = heatmap.store.exportDataSet();
+```</p>
+
+<p>As you can see a heatmap instance contains a store which stores its datapoints. 
+A store has the following functions:  </p>
+
+<ul>
+  <li><strong>setDataSet(Object)</strong> void. This initializes the heatmap with a dataset. The dataset object has to have the following structure: {max: <maximum count="">, data:[{x: <datapointx>, y: <datapointy>, count: <valueatxy>},...]}</valueatxy></datapointy></datapointx></maximum></li>
+  <li><strong>addDataPoint(Number, Number, [Number])</strong> void. Adds a single datapoint to the store. First parameter is x, second parameter is y. Third parameter is the value, if not specified 1 will be used.</li>
+  <li><strong>exportdataSet()</strong> Object. Returns the store's data as an object with the same structure that the import object at setDataSet has.</li>
+</ul>
+
+<h2 id="license">License</h2>
+<p>heatmap.js is dual-licensed under the MIT and the Beerware license, feel free to use it in your projects. </p>
+
+<h2 id="questions">Questions?</h2>
+<p>Feel free to contact me:<br />
+on my website <a title="&quot;)  
+via twitter [@patrickwied](http://twitter.com/#!/patrickwied &quot;" href="http://www.patrick-wied.at">patrick-wied.at</a><br />
+or email [contact@patrick-wied.at](mailto:contact@patrick-wied.at "")</p>
+
+
+
+    <script src="/javascripts/all.js" type="text/javascript"></script>
+  </body>
+</html>
