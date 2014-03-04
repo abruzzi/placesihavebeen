@@ -106,11 +106,5 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
-ignore 'bower_components/openlayers/apidoc_config/*'
-ignore 'bower_components/openlayers/art/*'
-ignore 'bower_components/openlayers/build/*'
-ignore 'bower_components/openlayers/doc_config/*'
-ignore 'bower_components/openlayers/examples/*'
-ignore 'bower_components/openlayers/lib/*'
-ignore 'bower_components/openlayers/tests/*'
-ignore 'bower_components/openlayers/tools/*'
+activate :relative_assets
+set :relative_links, true
