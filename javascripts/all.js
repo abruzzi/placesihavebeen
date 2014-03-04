@@ -96885,7 +96885,7 @@ $(function() {
         strokeWidth: 2
     };
 
-    $.get('/places.json').done(function(places) {
+    $.get('/placesihavebeen/places.json').done(function(places) {
         var valid = _.filter(places, function(item) {
             return item.longitude && item.latitude;    
         }).map(function(item) {
