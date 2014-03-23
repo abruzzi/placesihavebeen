@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title>The places I have been</title>
+    <title>Places I have been</title>
     
     <link href="stylesheets/app.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
@@ -18,30 +18,126 @@
         <h1><a href="https://github.com/abruzzi/placesihavebeen">Code In Github</a></h1>
       </li>
     </ul>
-    
+
     <section class="top-bar-section" />
 </nav>
 
 <div class="row">
   <div class="large-12 columns">
-    <h1>The places I have been</h1>
+    <h1>Places I have been</h1>
   </div>
 </div>
 
 <div class="row">
   <div class="large-12 columns">
     <div class="panel">
-        <p>During the past 2 years, I took about 5000+ photos by my iPhone 4s. iPhone 4s has a secret function that it takes photo with some additional information. Like geolocation, Aperture, Speed of shutter, etc. Last weekend, I just extract those information out of my photo collection, of course, write a few lines of ruby and JavaScript, here is what I got.</p>
+        <p>During the past 2 years, I have taken about 5000+ photos by my iPhone 4s.
+          iPhone 4s has a "secret" function: it takes photo with some<a href="http://en.wikipedia.org/wiki/Exchangeable_image_file_format"> additional information</a>.
+        </p>
+        <p>
+          Those additional information includes geolocation(longitude, latitude), aperture, speed of shutter, and so on.
+          Last weekend, I extracted those information out of my photo collection, and try to visualize it as a GIS.
+          Of course, with a few lines of ruby and JavaScript, here is what I got.
+        </p>
     </div>
   </div>
 </div>
 
 <div class="row">
     <div class="large-12 columns">
-        <div id="map" />
+        <div id="map">
+        </div>
     </div>
 </div>
 
+<div class="row">
+  <div class="large-12 columns">
+    <p>
+      Things I used for generate the map.
+    </p>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="large-12 columns">
+    <table>
+      <thead>
+        <th width="150">Name</th>
+        <th width="200">Description</th>
+        <th width="200">What for?</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="http://www.mongodb.org/">Mongodb</a></td>
+          <td>The most popular Opensource NoSQL database. <a href="http://www.mongodb.org/">Mongodb</a></td>
+          <td>Generate the places.json(used for the heatmap)</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/remvee/exifr">exifr</a></td>
+          <td>Extract EXIF info by using ruby, here is the detail. <a href="http://en.wikipedia.org/wiki/Exchangeable_image_file_format">EXIF</a></td>
+          <td>Extract the origianl EXIF information out of photos</td>
+        </tr>
+        <tr>
+          <td><a href="http://stedolan.github.io/jq/">jq</a></td>
+          <td>JSON data transformer. <a href="http://stedolan.github.io/jq/">./jq</a></td>
+          <td>Extract and transfrom the data extracted by exifr and mongodb</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+    <table>
+      <thead>
+        <tr>
+          <th width="150">Name</th>
+          <th width="200">Description</th>
+          <th width="200">What for?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="http://openlayers.org/">OpenLayers</a></td>
+          <td>JavaScript library for build WebGIS easier</td>
+          <td>The underlying map</td>
+        </tr>
+        <tr>
+          <td><a href="http://www.patrick-wied.at/static/heatmapjs/index.html">heatmap.js</a></td>
+          <td>An easy to use heatmap generator, and can be integrated prefectly with OpenLayers</td>
+          <td>The heatmap you can see</td>
+        </tr>
+        <tr>
+          <td><a href="http://foundation.zurb.com/">Foundation 5</a></td>
+          <td>The awesome responsive front-end framework</td>
+          <td>That's why you can visit this page via iPhone or iPad seamlessly</td>
+        </tr>
+        <tr>
+          <td><a href="http://pages.github.com/">Github page</a></td>
+          <td>A great platform for static page hosting</td>
+          <td>Hosting this site(well, part of)</td>
+        </tr>
+        <tr>
+          <td><a href="http://middlemanapp.com/">Middleman</a></td>
+          <td>A static page generator</td>
+          <td>Yes, that's how this site is generated</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/neo/middleman-gh-pages">middleman-gh-pages</a></td>
+          <td>A plugin for middleman, for make the deployment to github pages easier</td>
+          <td>Deploy to github</td>
+        </tr>
+        <tr>
+          <td><a href="http://bower.io/">Bower</a></td>
+          <td>Dependency management for front-end JavaScript development</td>
+          <td>JavaScript Dependency management</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 
     <script src="javascripts/all.js" type="text/javascript"></script>
